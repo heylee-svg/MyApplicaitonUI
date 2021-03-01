@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">MyApplicationUI</string>
-    <string name="red_light">我是 redlight</string>
-    <string name="rebind">woshi rebind</string>
-    <string name="wifi_2_4GHz">我是24G</string>
 </resources>

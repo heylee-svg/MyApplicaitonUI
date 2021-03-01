@@ -5,7 +5,6 @@ import android.util.Log
 import android.widget.TextView
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
-import com.cylan.smart.base.moduleapi.IAccountService
 import com.cylan.smart.plugin.R
 import com.cylan.smart.plugin.help.toVisible
 import kotlinx.android.synthetic.main.home_calender_activity.*
@@ -23,7 +22,7 @@ class CalenderActivity : BaseActivity() {
     override fun layoutRes(): Int = R.layout.home_calender_activity
 
     override fun initView() {
-        val navigation = ARouter.getInstance().navigation(IAccountService::class.java)
+
         titleTv?.text = "选择日期"
         rightText?.apply {
             text = "完成"
