@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="15dp"
+    android:paddingTop="16dp"
+    android:paddingRight="15dp">
+
+    <com.cylan.smart.plugin.widget.CircleImageView
+        android:id="@+id/cimg_face"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/avatar_placeholder" />
+
+    <LinearLayout
+        android:id="@+id/ll_name_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/cimg_face"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toStartOf="@+id/tv_visitor_count"
+        android:layout_toLeftOf="@+id/tv_visitor_count"
+        android:layout_toEndOf="@+id/cimg_face"
+        android:layout_toRightOf="@id/cimg_face"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_visitor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="150dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="#FF333333"
+            android:textSize="17sp"
+            tools:text="韩梅梅AAAAAAAAAAAAAAAAA" />
+
+        <TextView
+            android:id="@+id/tv_visitor_gender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/tv_visitor_name"
+            android:background="@drawable/home_selector_gender_tag_bg"
+            android:drawableLeft="@drawable/home_selector_gender_icon"
+            android:drawablePadding="5dp"
+            android:enabled="false"
+            android:maxLines="1"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:singleLine="true"
+            android:text="20"
+            android:textColor="@color/white"
+            android:textSize="11sp" />
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_last_visit_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/ll_name_gender"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_toEndOf="@+id/cimg_face"
+        android:layout_toRightOf="@id/cimg_face"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="最后来访于：2018.10.15 13:50"
+        android:textColor="#FF666666"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_visitor_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/ll_name_gender"
+        android:layout_alignParentRight="true"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="38"
+        android:textColor="#FF333333"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_below="@id/cimg_face"
+        android:layout_marginTop="16dp"
+        android:background="#F0F0F0" />
+
+</RelativeLayout>

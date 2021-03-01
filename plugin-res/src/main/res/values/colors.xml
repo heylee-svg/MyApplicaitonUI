@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="white">#ffffff</color>
+    <color name="devide_line">#19000000</color>
+    <color name="mian_color">#21CBCB</color>
+    <color name="text_color">#333333</color>
+    <color name="main_bg">#F3F4F6</color>
+    <color name="transparent">#00000000</color>
+    <!--不可用灰色-->
+
+    <!-- common -->
+    <color name="app_color_blue">#00A8E1</color>
+    <color name="app_color_blue_disabled">#8000A8E1</color>
+    <color name="app_color_blue_pressed">#c000A8E1</color>
+
+    <!-- Grapefruit -->
+    <!-- Bittersweet -->
+    <!-- Sunflower -->
+    <!-- Grass -->
+    <!-- Mint -->
+    <!-- Aqua -->
+    <!-- Blue Jeans -->
+    <!-- Lavender -->
+    <!-- Pink Rose -->
+
+    <!-- Components 组件 -->
+
+    <!-- Helper 系列界面 -->
+
+    <!-- ColorHelper 颜色工具 -->
+
+
+    <color name="warn_text_color">#FE3824</color>
+
+    <!-- 文字和文字的一些背景色-->
+    <color name="text_bg_F8F8F8">#F8F8F8</color>
+    <color name="text_333333">#333333</color>
+    <color name="text_666666">#666666</color>
+    <color name="text_999999">#999999</color>
+    <color name="text_636363">#636363</color>
+    <color name="text_AAAAAA">#AAAAAA</color>
+    <color name="diver_EEEEEE">#EEEEEE</color>
+    <color name="text_FF636363">#FF636363</color>
+    <color name="text_39d6ca">#39d6ca</color>
+    <color name ="text_warn_red">#FF8C81</color>
+    <color name="text_3CDEC2">#3CDEC2</color>
+
+
+
+</resources>

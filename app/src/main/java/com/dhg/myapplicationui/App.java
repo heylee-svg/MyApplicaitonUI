@@ -12,6 +12,8 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-//        ARouter.init(this);
+        ARouter.openDebug();
+        ARouter.openLog();
+        ARouter.init(this);
     }
 }

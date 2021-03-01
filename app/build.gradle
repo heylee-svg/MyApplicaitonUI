@@ -1,43 +1,89 @@
 apply plugin: 'com.android.application'
 
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt' // Required for annotation processing.
+
+apply plugin: 'com.huawei.agconnect'  // HUAWEI agconnect Gradle plugin
+
+
+
+repositories {
+    jcenter()
+    maven { url "https://dl.bintray.com/thelasterstar/maven/" }
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+
+    dexOptions {//dex配置
+
+        jumboMode true
+        javaMaxHeapSize "4g"
+        preDexLibraries = false
+        additionalParameters = [
+                '--multi-dex',//多分包
+                '--set-max-idx-number=60000',//每个包内方法数上限
+                '--main-dex-list=' + projectDir + '/maindexlist.txt',//打包进主classes.dex的文件列表
+                '--minimal-main-dex'//使上一句生效
+        ]
+    }
+
+    buildToolsVersion rootProject.ext.buildToolsVersion
+    compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.dhg.myapplicationui"
-        minSdkVersion 28
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode rootProject.ext.vcode
+        versionName rootProject.ext.vname
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        applicationId rootProject.ext.applicationId
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = ["APPLICATION_ID": applicationId,
+                                "OEM"           : rootProject.ext.oemName,
+                                "MATAPPKEY"     : rootProject.ext.mateAppkey]
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi-v7a","arm64-v8a"
+        }
 
-        javaCompileOptions {
-            annotationProcessorOptions {
-                arguments = [AROUTER_MODULE_NAME: project.getName()]
-                System.out.println("========>project name is:"+project.getName())
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [AROUTER_MODULE_NAME: project.getName()]
+//                System.out.println("========>project name is:"+project.getName())
+//            }
+//        }
+        kapt {
+            arguments {
+                arg("AROUTER_MODULE_NAME", project.getName())
             }
         }
+
     }
 
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    sourceSets.main {
+        jniLibs.srcDirs = ['libs']
+        jni.srcDirs = []
+    }
+
 }
-
 dependencies {
-
+//    implementation 'com.alibaba:arouter-api:1.5.1'
+//    annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
     implementation 'com.alibaba:arouter-api:1.5.1'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.5.1'
-
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+    implementation project(':plugin-access')
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
@@ -45,5 +91,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-
 }
+
+
+
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.antfortune.freeline'
+apply plugin: 'io.objectbox' // Apply last.
+

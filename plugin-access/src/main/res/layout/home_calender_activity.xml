@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+    <com.cylan.smart.base.widget.calendarview.DayPickerView
+            android:id="@+id/dpv_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp"
+            android:clipToPadding="false"
+            app:textSizeDay="14sp"
+            app:edgeTextSize="12sp"
+            app:textSizeYearMonth="16sp"
+            app:headerMonthHeight="50dp"
+            app:selectedDayRadius="20dp"
+            app:calendarHeight="320dp"
+            app:monthNumber="12"
+            />
+
+
+</RelativeLayout>

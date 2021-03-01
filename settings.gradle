@@ -1,2 +1,5 @@
+include ':plugin-base'
+include ':plugin-res'
 include ':app'
+include ':plugin-access'
 rootProject.name = "MyApplicationUI"

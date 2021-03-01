@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        >
+
+
+    <com.cylan.smart.plugin.widget.DotView
+            android:id="@+id/line"
+            android:layout_marginLeft="10dp"
+            android:layout_width="6dp"
+            android:layout_height="30dp"
+            android:layerType="software"
+            />
+
+
+    <ImageView
+            android:id="@+id/dotImg"
+            android:layout_below="@id/line"
+            android:layout_alignRight="@id/line"
+            android:layout_alignLeft="@id/line"
+            android:src="@drawable/dot_img_icon"
+            android:layout_width="6dp"
+            android:layout_height="6dp"
+            />
+    <com.cylan.smart.plugin.widget.DotView
+            android:id="@+id/lineBottom"
+            android:layout_alignLeft="@id/line"
+            android:layout_alignRight="@id/line"
+            android:layout_below="@id/dotImg"
+            android:layerType="software"
+            android:layout_width="6dp"
+            android:layout_height="9dp"
+            />
+
+    <TextView
+            android:layout_toRightOf="@id/dotImg"
+            android:id="@+id/time"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="08:39"
+            android:textColor="#ff999999"
+            android:textSize="17sp"
+            />
+    <TextView
+        android:layout_toRightOf="@id/time"
+        android:id="@+id/name"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="欧阳欧豪"
+        android:textColor="#ff666666"
+        android:textSize="17sp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,88 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+        arg("AROUTER_GENERATE_DOC", "enable")
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+//        buildConfigField "String","HOST","\"${rootProject.ext.host}\""
+//        println("base url :========> ${rootProject.ext.host}")
+//        buildConfigField "int","PORT","${rootProject.ext.port}"
+//        println("base port :========> ${rootProject.ext.port}")
+//
+//        buildConfigField "String","OEM","\"${rootProject.ext.oem}\""
+//        println("base OEM :========> ${rootProject.ext.oem}")
+
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    api project(':plugin-res')
+    api "androidx.appcompat:appcompat:${rootProject.ext.appCompatVersion}"
+    api "androidx.legacy:legacy-support-v4:${rootProject.ext.androidSupportVersion}"
+    implementation "com.google.android.material:material:${rootProject.ext.androidSupportVersion}"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.tencent:mmkv:1.0.15'
+
+    api 'com.github.bumptech.glide:glide:4.9.0'
+    implementation ('com.squareup.okhttp3:logging-interceptor:3.11.0',{
+        exclude group:"com.squareup.okio"
+    })
+
+    api 'com.squareup.retrofit2:converter-gson:2.5.0'
+    api 'io.reactivex.rxjava2:rxjava:2.2.5'
+    api 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    //    api "com.airbnb.android:lottie:2.8.0"
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    api 'com.qmuiteam:qmui:1.1.11'
+    api 'com.qmuiteam:arch:0.3.0'
+
+    implementation 'com.elvishew:xlog:1.6.1'
+    api 'pub.devrel:easypermissions:2.0.0'
+    implementation 'android.arch.lifecycle:extensions:1.1.1'
+    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1'
+    api 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
+    api 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
+//    api 'com.contrarywind:Android-PickerView:4.1.8'
+    implementation 'com.alibaba:arouter-api:1.5.1'
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    testImplementation 'junit:junit:4.12'
+}
+repositories {
+    maven {
+        url "https://repo.eclipse.org/content/repositories/paho-snapshots/"
+    }
+    mavenCentral()
+
+}
+

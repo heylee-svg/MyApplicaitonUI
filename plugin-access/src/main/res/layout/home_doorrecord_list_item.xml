@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:paddingTop="9dp"
+        android:paddingBottom="9dp"
+        android:layout_height="wrap_content"
+        >
+
+    <ImageView
+            android:id="@+id/doorRecordImg"
+            android:layout_width="79dp"
+            android:layout_height="79dp"
+            android:src="@drawable/avatar_placeholder"
+            />
+
+    <LinearLayout
+            android:layout_toRightOf="@id/doorRecordImg"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="9dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            >
+
+        <TextView
+                android:id="@+id/recordName"
+                android:textSize="18sp"
+                android:textColor="#636363"
+                tools:text = "访客"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
+        <TextView
+                android:id="@+id/captureTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:textColor="#636363"
+                tools:text = "抓拍机c1 抓拍时间：2019.8.13"
+                />
+
+    </LinearLayout>
+
+</RelativeLayout>

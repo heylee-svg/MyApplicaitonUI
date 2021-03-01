@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        android:id="@+id/homeCommonContent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:tools="http://schemas.android.com/tools"
+        tools:context=".ui.doorrecord.CommonListActivity"
+        >
+
+<FrameLayout
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/commonList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:itemCount = "6"
+            tools:listitem="@layout/home_kaoqin_list_item_layout"
+            ></androidx.recyclerview.widget.RecyclerView>
+</FrameLayout>
+</RelativeLayout>

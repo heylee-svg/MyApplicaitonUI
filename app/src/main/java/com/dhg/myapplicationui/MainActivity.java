@@ -49,8 +49,10 @@ public class MainActivity extends FragmentActivity {
         Log.i("sss", "a");
         tv.setOnClickListener(v -> {
 //            Decibelformat();
-            startActivity(new Intent(this,MainActivity2.class));
+            startActivity(new Intent(this,MainActivityKotlin.class));
 //            ARouter.getInstance().build("/home/activity2").navigation();
+//            ARouter.getInstance().build("/home/activityKotlin").navigation();
+
         });
 
 

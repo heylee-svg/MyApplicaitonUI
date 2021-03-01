@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+   >
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:text="8月1日(周一)"
+            android:textColor="#ff696969"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/workTime"
+            android:layout_width="161dp"
+            android:layout_height="wrap_content"
+            android:text="上班: 08:10 - 下班: 18:00"
+            android:textColor="#ff696969"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/personal_kaoqin_option_icon"
+            android:drawablePadding="5dp"
+            android:text="迟到、早退"
+            android:textColor="#ff696969"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/devide_line" />
+
+</LinearLayout>

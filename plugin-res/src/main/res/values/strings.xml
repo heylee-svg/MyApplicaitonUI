@@ -1,0 +1,4 @@
+<resources>
+    <string name="load_fails">加载失败，请重试</string>
+    <string name="net_fails">网络连接失败</string>
+</resources>

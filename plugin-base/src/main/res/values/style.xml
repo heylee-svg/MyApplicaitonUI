@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="smart_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <declare-styleable name="DayPickerView">
+        <attr name="textSizeDay" format="dimension"/>               <!-- 正常日期字体大小 -->
+        <attr name="textSizeYearMonth" format="dimension"/>        <!-- 头部年份月份字体大小 -->
+        <attr name="headerMonthHeight" format="dimension"/>        <!-- 头部高度 -->
+        <attr name="selectedDayRadius" format="dimension"/>        <!-- 日期半径 -->
+        <attr name="calendarHeight" format="dimension"/>           <!-- 行高 -->
+        <attr name="edgeTextSize" format="dimension"/>           <!-- 文字的大小 -->
+        <attr name="monthNumber" format="integer"/>    <!--显示月的数量-->
+    </declare-styleable>
+</resources>

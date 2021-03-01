@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cylan.smart.plugin">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application>
+
+        <!-- 适配全面屏 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.4" /> <!-- 适配华为(hua wei)刘海屏 -->
+        <meta-data
+            android:name="android.notch_support"
+            android:value="true" /> <!-- 适配小米(xiao mi)刘海屏 -->
+        <meta-data
+            android:name="notch.config"
+            android:value="portrait|landscape" />
+
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/home_activity_style"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
+        <activity
+            android:name=".ui.setting.SettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.menu.AddAccountActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.KaoqinSettingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.setting.About"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.personinfo.PersonInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.CalenderActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.personinfo.VipPersonInfoActivity"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@style/home_activity_style" />
+        <activity
+            android:name=".ui.doorrecord.DoorRecordDetailsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.doorrecord.ShowPicActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.doorrecord.CommonListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.doorrecord.GeneratorActivity"
+            android:screenOrientation="portrait" />
+    </application>
+
+</manifest>

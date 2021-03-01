@@ -1,0 +1,75 @@
+if (rootProject.ext.homeDebug) {
+    apply plugin: 'com.android.application'
+    apply plugin: 'com.alibaba.arouter'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+kapt {
+    arguments {
+        arg("AROUTER_MODULE_NAME", project.getName())
+        arg("AROUTER_GENERATE_DOC", "enable")
+    }
+}
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    dataBinding.enabled = true
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+
+    dataBinding {
+        enabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            if (rootProject.ext.homeDebug) {
+                manifest.srcFile 'src/hdebug/AndroidManifest.xml'
+            } else {
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }
+        }
+    }
+
+    resourcePrefix "home_"
+
+}
+
+
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ext.version2_0_0}"
+    api project(':plugin-base')
+    implementation 'com.alibaba:arouter-api:1.5.1'
+    kapt 'com.alibaba:arouter-compiler:1.5.1'
+
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.androidSupportVersion}"
+    implementation "androidx.cardview:cardview:${rootProject.ext.androidSupportVersion}"
+    implementation 'com.baoyz.pullrefreshlayout:library:1.2.0'
+    implementation "com.google.android.material:material:${rootProject.ext.androidSupportVersion}"
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+}
